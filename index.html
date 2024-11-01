@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --gradient-text: linear-gradient(45deg, #6366f1, #8b5cf6, #d946ef);
+            --gradient-code: linear-gradient(45deg, #3fbad6, #1798ee, #7c46ef);
+            --gradient-tags: linear-gradient(45deg, #d8e127, #68dc20, #1ebb77);
+        }
+        
+        body {
+            background-color: #0f172a;
+            color: #e2e8f0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gradient-text {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: bold;
+        }
+
+        .gradient-tags {
+            background: var(--gradient-tags);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: bold;
+        }
+
+        .gradient-links {
+            background: var(--gradient-code);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: bold;
+        }
+        .code-badge:hover, .skill-badge:hover {
+            color: rgb(228, 228, 228) !important;
+            text-decoration: underline !important;
+        }
+
+     
+
+        .navbar {
+            background-color: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Mobile navbar adjustments */
+        @media (max-width: 991.98px) {
+            .navbar-collapse {
+                background-color: rgba(15, 23, 42, 0.98);
+                padding: 1rem;
+                border-radius: 0.5rem;
+                margin-top: 0.5rem;
+            }
+        }
+
+        .profile-section {
+            padding: 6rem 0;
+            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.95));
+        }
+
+        .profile-image {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid transparent;
+            background: var(--gradient-text);
+            padding: 3px;
+        }
+
+        /* Mobile profile adjustments */
+        @media (max-width: 768px) {
+            .profile-section {
+                padding: 4rem 0;
+            }
+            .profile-image {
+                width: 160px;
+                height: 160px;
+            }
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        /* Mobile section adjustments */
+        @media (max-width: 768px) {
+            .section {
+                padding: 2rem 0;
+            }
+        }
+
+        .card {
+            background-color: rgba(31, 48, 92, 0.676);
+            backdrop-filter: blur(5px);
+            border: none;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            transition: ease-in-out 0.2s;
+        }
+
+        /* Mobile card adjustments */
+        @media (max-width: 768px) {
+            .card {
+                margin-bottom: 1rem;
+            }
+            .card:hover {
+                transform: none;
+            }
+        }
+
+        .skill-badge {
+            background: var(--gradient-text);
+            color: #f7feff;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            margin: 0.25rem;
+            display: inline-block;
+            font-weight: 600;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+        }
+        .skill-badge:hover {
+            transform: scale(1.1);
+            transition: ease-in-out 0.2s;
+        }
+
+        .skill-tag {
+            background: var(--gradient-text);
+            color: #f7feff;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            margin: 0.25rem;
+            display: inline-block;
+            font-weight: 600;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+        }
+
+
+        .code-badge {
+            background: var(--gradient-code);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            margin: 0.25rem;
+            display: inline-block;
+            font-weight: 600;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+        }
+        .code-badge:hover {
+            transform: scale(1.1);
+            transition: ease-in-out 0.2s;
+        }
+
+        .colortext {
+            color: linear-gradient(45deg, #3fbad6, #1798ee, #7c46ef);
+        }
+
+        /* Language switcher */
+        .language-switcher {
+            position: relative;
+        }
+
+        .language-switcher .dropdown-menu {
+            background-color: #1e293b;
+            border: none;
+            min-width: 100px;
+        }
+
+        .language-switcher .dropdown-item {
+            color: #e2e8f0;
+        }
+
+        .language-switcher .dropdown-item:hover {
+            background-color: #2d3748;
+            border-color: #7c46ef;
+        }
+
+        /* Hide language-specific content */
+        [lang="sv"] .en-content,
+        [lang="en"] .sv-content {
+            display: none;
+        }
+
+        .descriptiontext {
+            color: #e2e8f0;
+            font-family: 'Inter', sans-serif !important;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand gradient-text" href="#">
+                <span class="en-content">Jan Pakos</span>
+                <span class="sv-content">Jan Pakos</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://linkedin.com/in/jan-p-b065a2127" target="_blank">
+                            <span class="en-content gradient-links">LinkedIn</span>
+                            <span class="sv-content gradient-links">LinkedIn</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/Jan-Pakos" target="_blank">
+                            <span class="en-content gradient-links">GitHub</span>
+                            <span class="sv-content gradient-links">GitHub</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mailto:jan.p.pakos@gmail.com">
+                            <span class="en-content descriptiontext">Contact Me</span>
+                            <span class="sv-content descriptiontext">Kontakta Mig</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="language-switcher">
+                    <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                        <span class="en-content">Language</span>
+                        <span class="sv-content">Språk</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><button class="dropdown-item" onclick="changeLanguage('en')">English</button></li>
+                        <li><button class="dropdown-item" onclick="changeLanguage('sv')">Svenska</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Profile Section -->
+    <section class="profile-section" id="about">
+        <div class="container text-center">
+            <img src="pic.jpeg" alt="Your Profile" class="profile-image mb-4">
+            <h1 class="gradient-text mb-3">
+                <span class="en-content">Jan Pakos</span>
+                <span class="sv-content">Jan Pakos</span>
+            </h1>
+            <h3 class="mb-4">
+                <span class="en-content">Software Developer</span>
+                <span class="sv-content">Mjukvaruutvecklare</span>
+            </h3>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <p class="lead">
+                        <span class="en-content">
+                            A passionate software developer with expertise in building modern web applications. 
+                            Focused on creating efficient, scalable, and user-friendly solutions.
+                        </span>
+                        <span class="sv-content">
+                            En passionerad mjukvaruutvecklare med expertis inom moderna webbapplikationer. 
+                            Fokuserad på att skapa effektiva, skalbara och användarvänliga lösningar.
+                        </span>
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+        <div class="container">
+            <h2 class="gradient-text mb-5 text-center">
+                <span class="en-content">Programming Languages, Skills & Frameworks</span>
+                <span class="sv-content">Programmeringsspråk, Färdigheter & Ramverk</span>
+            </h2>
+            <div class="text-center">
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Django</span>
+                <span class="skill-tag">Flask</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">Javascript</span>
+                <span class="skill-tag">C</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+        <div class="container">
+            <h2 class="gradient-text mb-5 text-center">
+                <span class="en-content">My Experience</span>
+                <span class="sv-content">Min Erfarenhet</span>
+            </h2>
+            <div class="row g-4">
+                <!-- Project Card 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="/api/placeholder/400/200" class="card-img-top" alt="Project 2">
+                        <div class="card-body">
+                            <h5 class="card-title gradient-text">
+                                <span class="en-content">Auction Website</span>
+                                <span class="sv-content">Auktionswebbplats</span>
+                            </h5>
+                            <p class="card-text">
+                                <span class="en-content descriptiontext">Auction website built, allowing users to create accounts, list items for auction, place bids, and manage their auction activities.</span>
+                                <span class="sv-content descriptiontext">Webbplats för auktioner som gör det möjligt för användare att skapa konton, lista föremål för auktion, lägga bud och hantera sina auktionsaktiviteter.</span>
+                                
+                            </p>
+                            <p class="card-text">
+                                <span class="education-badge gradient-tags">Bootstrap</span>
+                                <span class="education-badge gradient-tags">-</span>
+                                <span class="education-badge gradient-tags">Python</span>
+                                <span class="education-badge gradient-tags">-</span>
+                                <span class="education-badge gradient-tags">Django</span>
+                                <span class="education-badge gradient-tags">-</span>
+                                <span class="education-badge gradient-tags">SQLite</span>
+                                <span class="education-badge gradient-tags">-</span>
+                                <span class="education-badge gradient-tags">HTML/CSS</span>
+                            </p>
+                            <div class="d-flex gap-2">
+                                <a href="#" class="btn skill-badge" target="_blank" >Demo</a>
+                                <a href="https://github.com/Jan-Pakos/Commerce-CS50W.git" target="_blank" class="btn code-badge">
+                                    <span class="en-content">Code</span>
+                                    <span class="sv-content">Kod</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="/api/placeholder/400/200" class="card-img-top" alt="Project 2">
+                        <div class="card-body">
+                            <h5 class="card-title gradient-text">
+                                <span class="en-content">Project Name</span>
+                                <span class="sv-content">Projektnamn</span>
+                            </h5>
+                            <p class="card-text">
+                                <span class="en-content descriptiontext">A brief description of your project and what technologies you used to build it.</span>
+                                <span class="sv-content descriptiontext">En kort beskrivning av ditt projekt och vilka teknologier du använde för att bygga det.</span>
+                            </p>
+                            <div class="d-flex gap-2">
+                                <a href="#" class="btn skill-badge">Demo</a>
+                                <a href="#" class="btn code-badge">
+                                    <span class="en-content">Code</span>
+                                    <span class="sv-content">Kod</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Project Card 1 -->
+                 <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="/api/placeholder/400/200" class="card-img-top" alt="Project 2">
+                        <div class="card-body">
+                            <h5 class="card-title gradient-text">
+                                <span class="en-content">Project Name</span>
+                                <span class="sv-content">Projektnamn</span>
+                            </h5>
+                            <p class="card-text">
+                                <span class="en-content descriptiontext">A brief description of your project and what technologies you used to build it.</span>
+                                <span class="sv-content descriptiontext">En kort beskrivning av ditt projekt och vilka teknologier du använde för att bygga det.</span>
+                            </p>
+                            <div class="d-flex gap-2">
+                                <a href="#" class="btn skill-badge">Demo</a>
+                                <a href="#" class="btn code-badge">
+                                    <span class="en-content">Code</span>
+                                    <span class="sv-content">Kod</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="section" id="education">
+        <div class="container">
+            <h2 class="gradient-text mb-5 text-center">
+                <span class="en-content">Education & Courses</span>
+                <span class="sv-content">Utbildning & Kurser</span>
+            </h2>
+            <div class="row g-4">
+                <!-- Education Card 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title gradient-text">
+                                <span class="en-content">B.Sc. Computer Science</span>
+                                <span class="sv-content">Kandidatexamen i Data & Systemvetenskap</span>
+                            </h5>
+                            <p class="card-text">
+                                <span class="en-content descriptiontext">Stockholm University, Obtained in 2025</span>
+                                <span class="sv-content descriptiontext">Stockholms Universitet, Erhållen 2025</span>
+                            </p>
+                            <div class="mt-3">
+                                <span class="education-badge gradient-tags">Java</span>
+                                <span class="education-badge gradient-tags">-</span>
+                                <span class="education-badge gradient-tags">UML</span>
+                                
+                            </div>
+                            <div class="d-flex gap-2" style="margin-top: 5px;">
+                                <a href="#" class="btn skill-badge en-content">Certificate</a>
+                                <a href="#" class="btn skill-badge sv-content">Certifikat</a>
+                                
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Card 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title gradient-text">
+                                <span class="en-content">B.Sc. Business Administration (Finance)</span>
+                                <span class="sv-content">Kandidatexamen i Företagsekonomi (Finans)</span>
+                            </h5>
+                            <p class="card-text">
+                                <span class="en-content descriptiontext">Stockholm University, Obtained in 2024</span>
+                                <span class="sv-content descriptiontext">Stockholms Universitet, Erhållen 2024</span>
+                            </p>
+                            <div class="mt-3">
+                                <span class="education-badge gradient-tags">R</span>
+                                <span class="education-badge gradient-tags">-</span>
+                                <span class="education-badge gradient-tags">Excel</span>
+                                <span class="education-badge gradient-tags">-</span>
+                                <span class="en-content education-badge gradient-tags">Statistics</span>
+                                <span class="sv-content education-badge gradient-tags">Statistik</span>
+                                <span class="education-badge gradient-tags">-</span>
+                                <span class="education-badge gradient-tags">Analysis</span>
+                            </div>
+                            <div class="d-flex gap-2" style="margin-top: 5px;">
+                                <a href="BSCFINANCEDEGREE.pdf" target="_blank" class="btn skill-badge en-content">Certificate</a>
+                                <a href="BSCFINANCEDEGREE.pdf" target="_blank" class="btn skill-badge sv-content">Certifikat</a>
+                                
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Card 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title gradient-text">
+                                <span class="en-content">CS50's Introduction to Computer Science</span>
+                                <span class="sv-content">CS50's Introduction to Computer Science</span>
+                            </h5>
+                            <p class="card-text">
+                                <span class="en-content descriptiontext">HarvardX (edx.org), 2025</span>
+                                <span class="sv-content descriptiontext">HarvardX (edx.org), 2025</span>
+                            </p>
+                            <div class="mt-3">
+                                <span class="education-badge gradient-tags">C</span>
+                                <span class="education-badge gradient-tags">-</span>
+                                <span class="education-badge gradient-tags">Python</span>
+                                <span class="education-badge gradient-tags">-</span>
+                                <span class="education-badge gradient-tags">Flask</span>
+                                <span class="education-badge gradient-tags">-</span>
+                                <span class="education-badge gradient-tags">SQL</span>
+                            </div>
+                            <div class="d-flex gap-2" style="margin-top: 5px;">
+                                <a href="#" class="btn skill-badge en-content">Certificate</a>
+                                <a href="#" class="btn skill-badge sv-content">Certifikat</a>
+                                
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Card 4 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title gradient-text">
+                                <span class="en-content">CS50's Web Programming with Python and JavaScript</span>
+                                <span class="sv-content">CS50's Web Programming with Python and JavaScript</span>
+                            </h5>
+                            <p class="card-text">
+                                <span class="en-content descriptiontext">HarvardX (edx.org), 2025</span>
+                                <span class="sv-content descriptiontext">HarvardX (edx.org), 2025</span>
+                            </p>
+                            <div class="mt-3">
+                                <span class="education-badge gradient-tags">Javascript</span>
+                                <span class="education-badge gradient-tags">-</span>
+                                <span class="education-badge gradient-tags">Python</span>
+                                <span class="education-badge gradient-tags">-</span>
+                                <span class="education-badge gradient-tags">Django</span>
+                                <span class="education-badge gradient-tags">-</span>
+                                <span class="education-badge gradient-tags">Git</span>
+                                <span class="education-badge gradient-tags">-</span>
+                                <span class="education-badge gradient-tags">CI/CD</span>
+                            </div>
+                            <div class="d-flex gap-2" style="margin-top: 5px;">
+                                <a href="#" class="btn skill-badge en-content">Certificate</a>
+                                <a href="#" class="btn skill-badge sv-content">Certifikat</a>
+                                
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function changeLanguage(lang) {
+            document.documentElement.lang = lang;
+            localStorage.setItem('preferred-language', lang);
+        }
+
+        // Set initial language based on stored preference or default to English
+        const storedLang = localStorage.getItem('preferred-language') || 'en';
+        document.documentElement.lang = storedLang;
+    </script>
+</body>
+</html>
