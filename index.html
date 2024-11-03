@@ -10,7 +10,9 @@
             --gradient-text: linear-gradient(45deg, #6366f1, #8b5cf6, #d946ef);
             --gradient-code: linear-gradient(45deg, #3fbad6, #1798ee, #7c46ef);
             --gradient-tags: linear-gradient(45deg, #d8e127, #68dc20, #1ebb77);
+            --gradient-sv: linear-gradient(45deg, #f2ff00, #00e5ff, #0066ff);
         }
+        
         
         body {
             background-color: #0f172a;
@@ -40,6 +42,10 @@
             background-clip: text;
             color: transparent;
             font-weight: bold;
+        }
+
+        .gradient-links:hover {
+            color: white;
         }
         .code-badge:hover, .skill-badge:hover {
             color: rgb(228, 228, 228) !important;
@@ -132,6 +138,15 @@
             font-weight: 600;
             text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
         }
+
+        .language-badge-sv {
+            background: var(--gradient-sv);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: bold;
+        }
+
         .skill-badge:hover {
             transform: scale(1.1);
             transition: ease-in-out 0.2s;
@@ -188,6 +203,12 @@
             border-color: #7c46ef;
         }
 
+        .languageswitch {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
         /* Hide language-specific content */
         [lang="sv"] .en-content,
         [lang="en"] .sv-content {
@@ -228,20 +249,14 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="mailto:jan.p.pakos@gmail.com">
-                            <span class="en-content descriptiontext">Contact Me</span>
-                            <span class="sv-content descriptiontext">Kontakta Mig</span>
+                            <span class="en-content gradient-links">Contact Me</span>
+                            <span class="sv-content gradient-links">Kontakta Mig</span>
                         </a>
                     </li>
                 </ul>
                 <div class="language-switcher">
-                    <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                        <span class="en-content">Language</span>
-                        <span class="sv-content">Språk</span>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li><button class="dropdown-item" onclick="changeLanguage('en')">English</button></li>
-                        <li><button class="dropdown-item" onclick="changeLanguage('sv')">Svenska</button></li>
-                    </ul>
+                    <a href="javascript:changeLanguage('en')" class="sv-content languageswitch">English 🇬🇧</a>
+                    <a href="javascript:changeLanguage('sv')" class="en-content languageswitch">Svenska 🇸🇪</a>
                 </div>
             </div>
         </div>
@@ -250,7 +265,7 @@
     <!-- Profile Section -->
     <section class="profile-section" id="about">
         <div class="container text-center">
-            <img src="pic.jpeg" alt="Your Profile" class="profile-image mb-4">
+            <img src="assets/pic.jpeg" alt="Your Profile" class="profile-image mb-4">
             <h1 class="gradient-text mb-3">
                 <span class="en-content">Jan Pakos</span>
                 <span class="sv-content">Jan Pakos</span>
@@ -281,7 +296,7 @@
         <div class="container">
             <h2 class="gradient-text mb-5 text-center">
                 <span class="en-content">Programming Languages, Skills & Frameworks</span>
-                <span class="sv-content">Programmeringsspråk, Färdigheter & Ramverk</span>
+                <span class="sv-content">Programmeringsspråk, Kompetenser & Ramverk</span>
             </h2>
             <div class="text-center">
                 <span class="skill-tag">Java</span>
@@ -302,7 +317,12 @@
             <h2 class="gradient-text mb-5 text-center">
                 <span class="en-content">My Experience</span>
                 <span class="sv-content">Min Erfarenhet</span>
+                
             </h2>
+            <p class="mb-5 text-center">
+            <span class="en-content lead">Not all projects are available for live demo due to hosting costs. Please check the GitHub repositories for full code and documentation.</span>
+            <span class="sv-content lead">Alla projekt är inte tillgängliga för live-demo på grund av hostingkostnader. Vänligen kontrollera GitHub-arkiven för fullständig kod och dokumentation.</span>
+            </p>
             <div class="row g-4">
                 <!-- Project Card 1 -->
                 <div class="col-md-6 col-lg-4">
@@ -343,15 +363,26 @@
                 <!-- Project Card 2 -->
                 <div class="col-md-6 col-lg-4">
                     <div class="card h-100">
-                        <img src="/api/placeholder/400/200" class="card-img-top" alt="Project 2">
+                        <img src="assets/projectmail.jpg" class="card-img-top" alt="Project 2">
                         <div class="card-body">
                             <h5 class="card-title gradient-text">
-                                <span class="en-content">Project Name</span>
-                                <span class="sv-content">Projektnamn</span>
+                                <span class="en-content">Private Email Client</span>
+                                <span class="sv-content">Privat e-postklient</span>
                             </h5>
                             <p class="card-text">
-                                <span class="en-content descriptiontext">A brief description of your project and what technologies you used to build it.</span>
-                                <span class="sv-content descriptiontext">En kort beskrivning av ditt projekt och vilka teknologier du använde för att bygga det.</span>
+                                <span class="en-content descriptiontext">A streamlined web-based messaging platform where users can send, receive, and archive messages all in one place.</span>
+                                <span class="sv-content descriptiontext">En smidig webbaserad meddelandeplattform där användarna kan skicka, ta emot och arkivera meddelanden på ett och samma ställe.</span>
+                            </p>
+                            <p class="card-text">
+                                <span class="education-badge gradient-tags">Javascript</span>
+                                <span class="education-badge gradient-tags">-</span>
+                                <span class="education-badge gradient-tags">Python</span>
+                                <span class="education-badge gradient-tags">-</span>
+                                <span class="education-badge gradient-tags">Django</span>
+                                <span class="education-badge gradient-tags">-</span>
+                                <span class="education-badge gradient-tags">SQLite</span>
+                                <span class="education-badge gradient-tags">-</span>
+                                <span class="education-badge gradient-tags">HTML/CSS</span>
                             </p>
                             <div class="d-flex gap-2">
                                 <a href="#" class="btn skill-badge">Demo</a>
@@ -395,8 +426,8 @@
     <section class="section" id="education">
         <div class="container">
             <h2 class="gradient-text mb-5 text-center">
-                <span class="en-content">Education & Courses</span>
-                <span class="sv-content">Utbildning & Kurser</span>
+                <span class="en-content">My Education & Courses</span>
+                <span class="sv-content">Mina Utbildningar & Kurser</span>
             </h2>
             <div class="row g-4">
                 <!-- Education Card 1 -->
@@ -450,8 +481,8 @@
                                 <span class="education-badge gradient-tags">Analysis</span>
                             </div>
                             <div class="d-flex gap-2" style="margin-top: 5px;">
-                                <a href="BSCFINANCEDEGREE.pdf" target="_blank" class="btn skill-badge en-content">Certificate</a>
-                                <a href="BSCFINANCEDEGREE.pdf" target="_blank" class="btn skill-badge sv-content">Certifikat</a>
+                                <a href="assets/BSCFINANCEDEGREE.pdf" target="_blank" class="btn skill-badge en-content">Certificate</a>
+                                <a href="assets/BSCFINANCEDEGREE.pdf" target="_blank" class="btn skill-badge sv-content">Certifikat</a>
                                 
                                 </a>
                             </div>
