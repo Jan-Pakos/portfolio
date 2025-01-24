@@ -70,6 +70,8 @@ const projectDescriptions = document.querySelectorAll(".project-description");
 // Education Titles and Descriptions
 const educationTitles = document.querySelectorAll(".education-title");
 const educationDescriptions = document.querySelectorAll(".education-description");
+const aboutme = document.querySelectorAll(".aboutme-text");
+
 
 languageToggle.addEventListener("click", () => {
   if (languageText.textContent === "EN") {
@@ -82,6 +84,7 @@ languageToggle.addEventListener("click", () => {
     heroSubtitle.textContent = "och jag är en Mjukvaruutvecklare";
 
     // About Section
+    aboutme.textContent = "Lite om mig";
     aboutText.textContent = "Jag är en dedikerad mjukvaruutvecklare med ett starkt fokus på att bygga moderna webbapplikationer. Min expertis inkluderar att skapa effektiva, skalbara och användarcentrerade lösningar. Medan jag specialiserar mig på backend-utveckling med Python och Java, är jag också skicklig på frontend- och fullstack-utveckling. Jag är öppen för att utforska möjligheter som ligger i linje med mina färdigheter och intressen. Dessutom är jag en amatörmässig fitnessentusiast och fotbollsspelare.";
 
     // Skills Section
