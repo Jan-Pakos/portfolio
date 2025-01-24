@@ -123,6 +123,7 @@ languageToggle.addEventListener("click", () => {
     heroSubtitle.textContent = "and I'm a Software Developer";
 
     // About Section
+    aboutme.textContent = "About me";
     aboutText.textContent = "I am a dedicated software developer with a strong focus on building modern web applications. My expertise includes creating efficient, scalable, and user-centric solutions. While I specialize in backend development with Python and Java, I am also proficient in frontend and full-stack development. I am open to exploring opportunities that align with my skills and interests. Additionally, I am an amateur fitness enthusiast and football player.";
 
     // Skills Section
