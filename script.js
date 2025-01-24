@@ -5,7 +5,9 @@ const strongSkills = [
     { name: "SQL", icon: "./assets/icons/sql.svg" },
     { name: "Java", icon: "./assets/icons/java.svg" },
     { name: "HTML", icon: "./assets/icons/html.svg" },
-    { name: "CSS", icon: "./assets/icons/css.svg" }
+    { name: "CSS", icon: "./assets/icons/css.svg" },
+    { name: "VS Code", icon: "./assets/icons/vscode.svg" },
+    { name: "IntelliJ", icon: "./assets/icons/intellij.svg" }
   ];
   
   const familiarSkills = [
@@ -14,7 +16,8 @@ const strongSkills = [
     { name: "C", icon: "./assets/icons/c.svg" },
     { name: "Git", icon: "./assets/icons/git.svg" },
     { name: "R", icon: "./assets/icons/r.svg" },
-    { name: "Flask", icon: "./assets/icons/flask.svg" }
+    { name: "Flask", icon: "./assets/icons/flask.svg" },
+    { name: "Figma", icon: "./assets/icons/figma.svg" }
   ];
   
   // Render Skills
