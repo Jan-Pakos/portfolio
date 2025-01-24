@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jan Pakos - Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-links">
+        <a href="https://github.com/Jan-Pakos" target="_blank" class="nav-link">
+          <img src="./assets/icons/github.svg" alt="GitHub" class="nav-icon">
+        </a>
+        <a href="https://linkedin.com/in/jan-p-b065a2127/" target="_blank" class="nav-link">
+          <img src="./assets/icons/linkedin.svg" alt="LinkedIn" class="nav-icon">
+        </a>
+      </div>
+      <button class="language-toggle flex items-center gap-2 p-2 rounded-full bg-gray-700 hover:bg-gray-600 transition-colors" id="language-toggle">
+        <img src="./assets/icons/globe.svg" alt="Globe" class="w-6 h-6">
+        <div class="relative w-12 h-6 bg-gray-600 rounded-full p-1">
+          <div id="language-switch" class="absolute left-1 w-4 h-4 bg-white rounded-full shadow-md transform transition-transform duration-300"></div>
+          <span id="language-text" class="absolute left-7 text-sm font-medium">EN</span>
+        </div>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 id="hero-title">Hello, my name is</h1>
+        <div class="typed-text">
+          <span id="typed-name"></span><span class="cursor">|</span>
+        </div>
+        <h2 id="hero-subtitle">and I'm a Software Developer</h2>
+      </div>
+      <div class="profile-image">
+        <img src="./assets/pic.jpeg" alt="Profile">
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about">
+    <div class="container">
+      <h3>A little about me</h3>
+      <p id="about-text">
+        I am a dedicated software developer with a strong focus on building modern web applications. My expertise includes creating efficient, scalable, and user-centric solutions. While I specialize in backend development with Python and Java, I am also proficient in frontend and full-stack development. I am open to exploring opportunities that align with my skills and interests. Additionally, I am an amateur fitness enthusiast and football player.
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills">
+    <div class="container">
+      <h3 class="sectiontitle">My strongest skills</h3>
+      <div class="skills-grid" id="strong-skills"></div>
+
+      <h3 class="sectiontitle">I'm also familiar with</h3>
+      <div class="skills-grid" id="familiar-skills"></div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects">
+    <div class="container">
+      <h3 class="sectiontitle">My Experience</h3>
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card">
+          <img src="./assets/project1.jpg" alt="Project 1" class="project-image">
+          <h4 class="project-title">Systemvetardagen.com Job Fair Website</h4>
+          <p class="project-description">Comprehensive job fair platform serving university students and recruiting companies featuring company profiles and event information with a bilingual interface</p>
+          <div class="project-tags">
+            <span class="tag">Typescript</span>
+            <span class="tag">React</span>
+            <span class="tag">AWS</span>
+          </div>
+          <div class="project-buttons">
+            <a href="https://github.com/Jan-Pakos/project1" target="_blank" class="project-button">
+              <img src="./assets/icons/github.svg" alt="GitHub" class="button-icon">
+              <span>View Code</span>
+            </a>
+          </div>
+        </div>
+        <!-- Project 2 -->
+        <div class="project-card">
+            <img src="./assets/projectmail.jpg" alt="Project 1" class="project-image">
+            <h4 class="project-title">Private Email Client</h4>
+            <p class="project-description">A streamlined web-based messaging platform where users can send, receive, and archive messages all in one place.</p>
+            <div class="project-tags">
+              <span class="tag">Javascript</span>
+              <span class="tag">HTML/CSS</span>
+              <span class="tag">Bootstrap</span>
+            </div>
+            <div class="project-buttons">
+              <a href="http://janpakos.se/#" target="_blank" class="project-button">
+                <img src="./assets/icons/github.svg" alt="GitHub" class="button-icon">
+                <span>View Code</span>
+              </a>
+            </div>
+          </div>
+          <!-- Project 3 -->
+        <div class="project-card">
+            <h4 class="project-title">Auction Website</h4>
+            <p class="project-description">Auction website built, allowing users to create accounts, list items for auction, place bids, and manage their auction activities.</p>
+            <div class="project-tags">
+              <span class="tag">Django</span>
+              <span class="tag">SQLite</span>
+              <span class="tag">HTML/CSS</span>
+              <span class="tag">Bootstrap</span>
+            </div>
+            <div class="project-buttons">
+              <a href="https://github.com/Jan-Pakos/Commerce-CS50W" target="_blank" class="project-button">
+                <img src="./assets/icons/github.svg" alt="GitHub" class="button-icon">
+                <span>View Code</span>
+              </a>
+            </div>
+          </div>
+          <!-- Project 4 -->
+        <div class="project-card">
+            <img src="./assets/project1.jpg" alt="Project 1" class="project-image">
+            <h4 class="project-title">Dog Register</h4>
+            <p class="project-description">A Java program which allows users to register owners and their dogs and keep track of the relations between them, text-based interface.</p>
+            <div class="project-tags">
+              <span class="tag">Java</span>
+            </div>
+            <div class="project-buttons">
+              <a href="https://github.com/Jan-Pakos/project1" target="_blank" class="project-button">
+                <img src="./assets/icons/github.svg" alt="GitHub" class="button-icon">
+                <span>View Code</span>
+              </a>
+            </div>
+          </div>
+        <!-- Add more project cards as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section class="education">
+    <div class="container">
+      <h3 class="sectiontitle">Formal Education and Courses</h3>
+      <div class="education-list">
+        <!-- Education/Course 1 -->
+        <div class="education-item">
+          <h4 class="education-title">B.Sc. Computer and Systems Science</h4>
+          <p class="education-institution">Stockholm University</p>
+          <p class="education-description">During these studies, I gained proficiency in designing and implementing programs using UML and Java. Additionally, I acquired knowledge in User Interface/User Experience (UI/UX) design and database methods. Furthermore, I learned programming for the internet using Java.</p>
+          <div class="education-tags">
+            <span class="tag">Java</span>
+            <span class="tag">Algorithms</span>
+            <span class="tag">Data Structures</span>
+            <span class="tag">UML</span>
+            <span class="tag">UI/UX</span>
+            <span class="tag">Figma</span>
+            <span class="tag">SQL</span>
+          </div>
+        </div>
+        <!-- Education/Course 2 -->
+        <div class="education-item">
+            <h4 class="education-title">B.Sc. Business Administration (Finance)</h4>
+            <p class="education-institution">Stockholm University</p>
+            <p class="education-description">I extensively used Microsoft Excel for financial calculations, PowerPoint for presentations, and Microsoft Word for collaborative writing during my studies. My curriculum covered management, financial statistics, and accounting. I also used R programming to build ARIMA models on time series data. Notably, I wrote my bachelor’s thesis in finance, analyzing historical stock data for statistically significant deviations from expectations.</p>
+            <div class="education-tags">
+              <span class="tag">Excel</span>
+              <span class="tag">R</span>
+              <span class="tag">Statistics</span>
+            </div>
+          </div>
+          <!-- Education/Course 3 -->
+        <div class="education-item">
+            <h4 class="education-title">CS50's Introduction to Computer Science</h4>
+            <p class="education-institution">HarvardX (edx.org)</p>
+            <p class="education-description">Teaches algorithms, data structures, web development, and more, using languages such as C, Python, SQL, and JavaScript.</p>
+            <div class="education-tags">
+              <span class="tag">C</span>
+              <span class="tag">Python</span>
+              <span class="tag">Flask</span>
+              <span class="tag">Git</span>
+              <span class="tag">SQL</span>
+            </div>
+          </div>
+           <!-- Education/Course 4 -->
+        <div class="education-item">
+            <h4 class="education-title">CS50's Web Programming with Python and JavaScript</h4>
+            <p class="education-institution">HarvardX (edx.org)</p>
+            <p class="education-description">Dives into web development with Python, JavaScript, and SQL, using frameworks like Django, React, and Bootstrap. Topics include database design, scalability, security, and user experience.</p>
+            <div class="education-tags">
+              <span class="tag">Javascript</span>
+              <span class="tag">Python</span>
+              <span class="tag">Django</span>
+              <span class="tag">Git</span>
+              <span class="tag">CI/CD</span>
+            </div>
+          </div>
+        <!-- Add more education/course items as needed -->
+      </div>
+    </div>
+  </section>
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
